@@ -32,7 +32,7 @@ app.post("/", function(req, res) {
 
   const options = {
     method: "post",
-    auth: "tasinshafileon:a313a0891a49d3162947c02373bea2d9d-us5"
+    auth: "tasinshafileon:313a0891a49d3162947c02373bea2d9d-us5"
   }
 
   const request = https.request(mailChimpURL, options, function(response) {
