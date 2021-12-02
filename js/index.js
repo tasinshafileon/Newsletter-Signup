@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const request = require('request');
 const https = require('https');
+require('dotenv').config();
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -32,13 +33,14 @@ app.post("/", function(req, res) {
 
   const options = {
     method: "post",
-    auth: config.MAIL_CHIMP_NAME+":"+config.MAIL_CHIMP_KEY
+    auth: ""+process.env.AUTH_TOKEN
   }
 
   const request = https.request(mailChimpURL, options, function(response) {
     if (response.statusCode === 200) {
       res.sendFile(path.join(__dirname, "../success.html"));
     } else {
+      console.log(response.statusCode);
       res.sendFile(path.join(__dirname, "../failure.html"));
     }
 

@@ -25,4 +25,4 @@ $RECYCLE.BIN/
 
 node_modules
 
-config.js
+.env
