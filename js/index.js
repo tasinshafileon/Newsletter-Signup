@@ -33,7 +33,7 @@ app.post("/", function(req, res) {
 
   const options = {
     method: "post",
-    auth: ""+process.env.AUTH_TOKEN
+    auth: process.env.AUTH_TOKEN
   }
 
   const request = https.request(mailChimpURL, options, function(response) {
